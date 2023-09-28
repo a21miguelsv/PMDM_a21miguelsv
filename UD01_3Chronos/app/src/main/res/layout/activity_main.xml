@@ -14,5 +14,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="56sp"/>
+    <Button
+        android:id="@+id/btn_pause"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/pause"
+        />
+    <Button
+        android:id="@+id/btn_restart"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/restart"
+        />
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/start"
+        />
 
 </LinearLayout>
