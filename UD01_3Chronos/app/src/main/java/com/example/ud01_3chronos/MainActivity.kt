@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
         btnPause.setOnClickListener {
             offset = 0L
             chrono.base = SystemClock.elapsedRealtime()
-            chrono.start()
         }
 
     }
@@ -58,5 +57,50 @@ class MainActivity : AppCompatActivity() {
         outState.putLong(OFFSET_KEY, offset)
         outState.putLong(BASE_KEY, chrono.base)
         super.onSaveInstanceState(outState)
+    }
+
+    override fun onStop() {
+        if (running) {
+            offset = SystemClock.elapsedRealtime() - chrono.base
+            chrono.stop()
+        }
+        super.onStop()
+    }
+
+    override fun onRestart() {
+        if (running){
+            chrono.base = SystemClock.elapsedRealtime() - offset
+            chrono.start()
+        }
+        super.onRestart()
+    }
+
+    override fun onPause() {
+        if (running) {
+            offset = SystemClock.elapsedRealtime() - chrono.base
+            chrono.stop()
+        }
+        super.onPause()
+    }
+
+    override fun onResume() {
+        if (running){
+            chrono.base = SystemClock.elapsedRealtime() - offset
+            chrono.start()
+        }
+        super.onResume()
+    }
+
+    fun startChrono(){
+        if (running){
+            chrono.base = SystemClock.elapsedRealtime() - offset
+            chrono.start()
+        }
+    }
+    fun stopChrono(){
+        if (running) {
+            offset = SystemClock.elapsedRealtime() - chrono.base
+            chrono.stop()
+        }
     }
 }
