@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EncryptFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:gravity="center_horizontal">
     <TextView
+        android:id="@+id/encrypt_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:text="@string/encrypt_text">
 
-</FrameLayout>
+    </TextView>
+    <TextView
+        android:id="@+id/encrypt_textValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:layout_margin="20dp">
+
+    </TextView>
+</LinearLayout>

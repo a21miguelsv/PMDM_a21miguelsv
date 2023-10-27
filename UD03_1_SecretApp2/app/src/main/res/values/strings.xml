@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">UD03_1_SecretApp2</string>
+    <string name="app_name">UD03_1_SecretApp</string>
+    <string name="welcome_text">Bienvenido a la app Secret Message! Usa esta app para encriptar un mensaje secreto.</string>
+    <string name="start">Inicio</string>
+    <string name="next">Siguiente</string>
+    <string name="encrypt_text">Aquí está tu mensaje encriptado!</string>
+    <string name="message_text">Introduce aquí tu mensaje</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

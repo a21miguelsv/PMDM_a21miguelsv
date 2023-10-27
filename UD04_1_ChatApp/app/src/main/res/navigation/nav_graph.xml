@@ -8,11 +8,16 @@
     <fragment
         android:id="@+id/inboxFragment"
         android:name="com.example.ud04_1_chatapp.InboxFragment"
-        android:label="fragment_inbox"
+        android:label="Inbox"
         tools:layout="@layout/fragment_inbox" />
     <fragment
         android:id="@+id/helpFragment"
         android:name="com.example.ud04_1_chatapp.HelpFragment"
-        android:label="fragment_help"
+        android:label="Help"
         tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.example.ud04_1_chatapp.MessageFragment"
+        android:label="Sent Items"
+        tools:layout="@layout/fragment_message" />
 </navigation>
