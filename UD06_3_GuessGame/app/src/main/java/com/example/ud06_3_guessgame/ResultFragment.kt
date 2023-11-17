@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import com.example.ud06_3_guessgame.databinding.FragmentGameBinding
 import com.example.ud06_3_guessgame.databinding.FragmentResultBinding
 
@@ -14,6 +15,9 @@ import com.example.ud06_3_guessgame.databinding.FragmentResultBinding
 class ResultFragment : Fragment() {
     private var _binding: FragmentResultBinding? = null
     private val binding get() = _binding!!
+    val gameModel: GameViewModel by viewModels(
+        ownerProducer = {this.requireActivity()}
+    )
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,9 +26,12 @@ class ResultFragment : Fragment() {
 //        return inflater.inflate(R.layout.fragment_game, container, false)
         _binding = FragmentResultBinding.inflate(inflater, container, false)
         val view = binding.root
-        val gameModel: GameViewModel by viewModels()
+        binding.txtResult.text = gameModel.resultMessage()
+
+
         binding.buttonNewGame.setOnClickListener {
-            Toast.makeText(activity, gameModel.secretWord, Toast.LENGTH_LONG).show()
+            gameModel.restart()
+            view.findNavController().navigate(R.id.action_resultFragment_to_gameFragment)
         }
         return view
     }
